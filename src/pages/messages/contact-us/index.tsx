@@ -3,8 +3,8 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 type LogEntry = string
 
 
-if (!process.env.NEXT_PUBLIC_HUBSPOT_TACKING_CODE) {
-    throw new Error('Missing env.NEXT_PUBLIC_HUBSPOT_TACKING_CODE')
+if (!process.env.NEXT_PUBLIC_HUBSPOT_TRACKING_CODE) {
+    throw new Error('Missing env.NEXT_PUBLIC_HUBSPOT_TRACKING_CODE')
 }
 
 
@@ -84,7 +84,7 @@ const ContactUs: React.FC = () => {
     scriptLoadedRef.current = true
 
     const script = document.createElement('script')
-    script.src = `//js.hs-scripts.com/${process.env.NEXT_PUBLIC_HUBSPOT_TACKING_CODE}.js`
+    script.src = `//js.hs-scripts.com/${process.env.NEXT_PUBLIC_HUBSPOT_TRACKING_CODE}.js`
     script.id = 'hs-script-loader'
     script.async = true
     script.defer = true
